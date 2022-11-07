@@ -1,0 +1,140 @@
+package ru.testit.samples.failed;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+import ru.testit.annotations.*;
+import ru.testit.models.LinkItem;
+import ru.testit.models.LinkType;
+import ru.testit.services.Adapter;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Execution(ExecutionMode.CONCURRENT)
+public class OnlyBeforeAfterEachTests {
+    @BeforeEach
+    @Title("Log in the system")
+    @Description("System authentication")
+    public void authorization() {
+        Assertions.assertTrue(setLogin("User_2"));
+        Assertions.assertTrue(setPassword("Pass123"));
+    }
+
+    @Step
+    @Title("Set login")
+    public boolean setLogin(String login) {
+        return login.equals("User_1");
+    }
+
+    @Step
+    @Title("Set password")
+    public boolean setPassword(String password) {
+        return password.equals("Pass123");
+    }
+
+    @Step
+    @Title("Create a project")
+    @Description("Project was created")
+    public void createProject() {
+        Assertions.assertTrue(true);
+    }
+
+    @Step
+    @Title("Enter the project")
+    @Description("The contents of the project are displayed")
+    public void enterProject() {
+        Assertions.assertTrue(true);
+    }
+
+    @Step
+    @Title("Create a section")
+    @Description("Section was created")
+    public void createSection() {
+        Assertions.assertTrue(false);
+    }
+
+    @Step
+    @Title("Create a test case")
+    @Description("Test case was created")
+    public void createTestCase() {
+        Assertions.assertTrue(true);
+    }
+
+    @BeforeEach
+    @Title("Maximum nesting in setup step")
+    public void beforeStepWithMaximumNesting() {
+        maximumNestingStep(13);
+    }
+
+    @Step
+    @Title("Maximum nesting step")
+    @Description("15 nesting levels of step")
+    public void maximumNestingStep(int level) {
+        if (level > 1) {
+            maximumNestingStep(level - 1);
+        }
+    }
+
+    @Test
+    @ExternalId("failed_BeforeEach_AfterEach_with_all_annotations")
+    @DisplayName("Failed test with all annotations")
+//    @WorkItemIds("456")
+    @Title("Title in the autotest card")
+    @Description("Test with BeforeEach, AfterEach and all annotations")
+    @Labels({"Tag1","Tag2"})
+    @Links(links = {
+            @Link(url = "https://dumps.example.com/module/repository", title = "Repository", description = "Example of repository", type = LinkType.REPOSITORY),
+            @Link(url = "https://dumps.example.com/module/projects", title = "Projects", type = LinkType.REQUIREMENT),
+            @Link(url = "https://dumps.example.com/module/", type = LinkType.BLOCKED_BY),
+            @Link(url = "https://dumps.example.com/module/docs", title = "Documentation", type = LinkType.RELATED),
+            @Link(url = "https://dumps.example.com/module/JCP-777", title = "JCP-777", type = LinkType.DEFECT),
+            @Link(url = "https://dumps.example.com/module/issue/5", title = "Issue-5", type = LinkType.ISSUE),
+    })
+    public void allAnnotationsTest() {
+       Adapter.addLinks("https://testit.ru/", "Test 1","Desc 1", LinkType.ISSUE);
+        createProject();
+        enterProject();
+        createSection();
+        createTestCase();
+        maximumNestingStep(13);
+    }
+
+    @Test
+    @ExternalId("failed_BeforeEach_AfterEach_with_required_annotations")
+    @DisplayName("Failed test with required annotations")
+    public void requiredAnnotationsTest() {
+        Assertions.assertTrue(false);
+    }
+
+    @AfterEach
+    @Title("Log out the system")
+    public void logOut() {
+        Assertions.assertTrue(true);
+    }
+
+    @AfterEach
+    @Title("Maximum nesting in teardown step")
+    public void afterStepWithMaximumNesting() throws IOException {
+//        maximumNestingStep(13);
+        List<File> filesInFolder = Files.walk(Paths.get("/Users/dmitry.gridnev/Documents/allurekiller"))
+                .filter(Files::isRegularFile)
+                .map(Path::toFile)
+                .collect(Collectors.toList());
+
+        int min = 0;
+        int max = filesInFolder.size();
+        int b = (int)(Math.random()*(max-min+1)+min);
+        System.out.println("Random number " + b);
+        System.out.println("Path " + filesInFolder.get(b).getAbsolutePath());
+        Adapter.addAttachments(filesInFolder.get(b).getAbsolutePath());
+    }
+}

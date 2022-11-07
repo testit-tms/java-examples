@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+}
+
+configurations {
+    aspectConfig
+}
+
+sourceCompatibility = 1.8
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+compileJava.options.encoding = 'utf-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'utf-8'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    testImplementation 'org.aspectj:aspectjrt:1.9.7'
+    testImplementation "ru.testit:testit-adapter-junit4:1.0.0"
+    testImplementation "ru.testit:testit-java-commons:1.0.0"
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.junit.platform:junit-platform-runner:1.6.3'
+    aspectConfig "org.aspectj:aspectjweaver:1.9.7"
+}
+
+test {
+    useJUnit()
+    doFirst {
+        def weaver = configurations.aspectConfig.find { it.name.contains("aspectjweaver") }
+        jvmArgs += "-javaagent:$weaver"
+    }
+
+//    systemProperty 'tmsTestRunName', System.getProperty('tmsTestRunName')
+}

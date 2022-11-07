@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+def cucumberVersion = "5.1.2"
+def cucumberGherkinVersion = "5.1.0"
+
+dependencies {
+    testImplementation "ru.testit:testit-adapter-cucumber5:2.1.0"
+    testImplementation "ru.testit:testit-java-commons:2.1.0"
+    testImplementation 'org.testng:testng:7.5'
+    testImplementation("io.cucumber:gherkin:$cucumberGherkinVersion")
+    testImplementation("io.cucumber:cucumber-core:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-java:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-testng:$cucumberVersion")
+}
+
+test {
+    useTestNG()
+}
