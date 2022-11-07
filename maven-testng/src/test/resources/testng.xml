@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="My suite">
+    <listeners>
+        <listener class-name="ru.testit.listener.BaseTestNgListener"/>
+    </listeners>
+    <test name="All">
+        <classes>
+            <class name="ru.testit.samples.FullBeforeAfterTests" />
+            <class name="ru.testit.samples.OnlyBeforeAfterAllTests" />
+            <class name="ru.testit.samples.OnlyBeforeAfterEachTests" />
+            <class name="ru.testit.samples.failed.FullBeforeAfterTests" />
+            <class name="ru.testit.samples.failed.OnlyBeforeAfterAllTests" />
+            <class name="ru.testit.samples.failed.OnlyBeforeAfterEachTests" />
+        </classes>
+    </test>
+</suite>

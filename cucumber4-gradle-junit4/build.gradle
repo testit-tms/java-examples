@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+def cucumberVersion = "4.8.0"
+def junit4Version = "4.12"
+
+dependencies {
+    testImplementation "ru.testit:testit-adapter-cucumber4:1.1.1"
+    testImplementation "ru.testit:testit-java-commons:1.1.1"
+    testImplementation("io.cucumber:cucumber-core:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-java:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-junit:$cucumberVersion")
+    testImplementation "junit:junit:$junit4Version"
+}
+
+test {
+    useJUnit()
+}
