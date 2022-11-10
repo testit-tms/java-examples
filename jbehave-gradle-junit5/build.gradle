@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+def junitVersion = "5.8.2"
+def jbehaveVersion = "4.8.3"
+def aspectjVersion = "1.9.7"
+def adapterVersion = "1.1.4"
+
+dependencies {
+    testImplementation "ru.testit:testit-adapter-jbehave:$adapterVersion"
+    testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    testImplementation "org.jbehave:jbehave-core:$jbehaveVersion"
+    testImplementation "org.aspectj:aspectjrt:$aspectjVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+test {
+    useJUnitPlatform()
+}

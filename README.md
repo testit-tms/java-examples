@@ -45,4 +45,12 @@ This repository contains samples for Java testing frameworks and Test IT adapter
 
 * Serenity
    - [Serenity2-Gradle-Junit4](https://github.com/testit-tms/java-examples/tree/main/serenity2-gradle-junit4)
-   - [Serenity3-Gradle-Junit4](https://github.com/testit-tms/java-examples/tree/main/serenity3-gradle-junit4)        
+   - [Serenity3-Gradle-Junit4](https://github.com/testit-tms/java-examples/tree/main/serenity3-gradle-junit4)  
+   
+* JBehave
+   - [JBehave-Gradle-Junit4](https://github.com/testit-tms/java-examples/tree/main/jbehave-gradle-junit4)
+   - [JBehave-Maven-Junit4](https://github.com/testit-tms/java-examples/tree/main/jbehave-maven-junit4) 
+   - [JBehave-Gradle-Junit5](https://github.com/testit-tms/java-examples/tree/main/jbehave-gradle-junit5)
+   - [JBehave-Maven-Junit5](https://github.com/testit-tms/java-examples/tree/main/jbehave-maven-junit5) 
+   - [JBehave-Gradle-TestNG](https://github.com/testit-tms/java-examples/tree/main/jbehave-gradle-testng)
+   - [JBehave-Maven-TestNG](https://github.com/testit-tms/java-examples/tree/main/jbehave-maven-testng)   
