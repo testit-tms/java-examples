@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+def jbehaveVersion = "4.8.3"
+def aspectjVersion = "1.9.7"
+
+dependencies {
+    testImplementation "ru.testit:testit-adapter-jbehave:1.1.4"
+    testImplementation "ru.testit:testit-java-commons:1.1.4"
+    testImplementation 'org.testng:testng:7.5'
+    testImplementation("org.jbehave:jbehave-core:$jbehaveVersion")
+    testImplementation("org.aspectj:aspectjrt:$aspectjVersion")
+}
+
+test {
+    useTestNG()
+}
