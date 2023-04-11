@@ -14,13 +14,13 @@ repositories {
     mavenLocal()
 }
 
-def testit_version = "1.0.0"
+def adapter_version = "1.2.2"
 
 dependencies {
     testImplementation 'org.aspectj:aspectjrt:1.9.7'
-    testImplementation "ru.testit:testit-adapter-junit5:$testit_version"
+    testImplementation "ru.testit:testit-adapter-junit5:$adapter_version"
     testImplementation "org.junit.platform:junit-platform-launcher:1.9.0"
-    testImplementation "ru.testit:testit-java-commons:$testit_version"
+    testImplementation "ru.testit:testit-java-commons:$adapter_version"
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:5.8.2"
     testImplementation "org.junit.jupiter:junit-jupiter-params:5.8.2"
