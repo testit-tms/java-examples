@@ -76,10 +76,10 @@ public class Steps {
         Adapter.addLinks("https://test02.example", "Example02", "Example02 description", LinkType.ISSUE);
 
         Adapter.addAttachments("Content", "file01.txt");
-        Adapter.addAttachments("resources/attachments/file02.txt");
+        Adapter.addAttachments(getFileFullPath("attachments/file02.txt"));
         List<String> paths = new ArrayList<>();
-        paths.add("resources/attachments/file03.txt");
-        paths.add("resources/attachments/file04.txt");
+        paths.add(getFileFullPath("attachments/file03.txt"));
+        paths.add(getFileFullPath("attachments/file04.txt"));
         Adapter.addAttachments(paths);
 
         Adapter.addMessage("Message");

@@ -8,6 +8,7 @@ import ru.testit.annotations.Title;
 import ru.testit.models.LinkType;
 import ru.testit.services.Adapter;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,10 +58,10 @@ public class Steps {
     @When("add attachments")
     public void addAttachments() {
         Adapter.addAttachments("Content", "file01.txt");
-        Adapter.addAttachments("resources/attachments/file02.txt");
+        Adapter.addAttachments(getFileFullPath("attachments/file02.txt"));
         List<String> paths = new ArrayList<>();
-        paths.add("resources/attachments/file03.txt");
-        paths.add("resources/attachments/file04.txt");
+        paths.add(getFileFullPath("attachments/file03.txt"));
+        paths.add(getFileFullPath("attachments/file04.txt"));
         Adapter.addAttachments(paths);
     }
 
@@ -75,12 +76,17 @@ public class Steps {
         Adapter.addLinks("https://test02.example", "Example02", "Example02 description", LinkType.ISSUE);
 
         Adapter.addAttachments("Content", "file01.txt");
-        Adapter.addAttachments("resources/attachments/file02.txt");
+        Adapter.addAttachments(getFileFullPath("attachments/file02.txt"));
         List<String> paths = new ArrayList<>();
-        paths.add("resources/attachments/file03.txt");
-        paths.add("resources/attachments/file04.txt");
+        paths.add(getFileFullPath("attachments/file03.txt"));
+        paths.add(getFileFullPath("attachments/file04.txt"));
         Adapter.addAttachments(paths);
 
         Adapter.addMessage("Message");
+    }
+
+    private String getFileFullPath(String fileName){
+        URL url = getClass().getClassLoader().getResource(fileName);
+        return url != null ? url.getFile() : null;
     }
 }

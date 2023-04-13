@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import ru.testit.models.LinkType;
 import ru.testit.services.Adapter;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,10 +29,10 @@ public class MethodTests {
     @Test
     public void addAttachments_success() {
         Adapter.addAttachments("Content", "file01.txt");
-        Adapter.addAttachments("resources/attachments/file02.txt");
+        Adapter.addAttachments(getFileFullPath("attachments/file02.txt"));
         List<String> paths = new ArrayList<>();
-        paths.add("resources/attachments/file03.txt");
-        paths.add("resources/attachments/file04.txt");
+        paths.add(getFileFullPath("attachments/file03.txt"));
+        paths.add(getFileFullPath("attachments/file04.txt"));
         Adapter.addAttachments(paths);
 
         Assertions.assertTrue(true);
@@ -40,10 +41,10 @@ public class MethodTests {
     @Test
     public void addAttachments_failed() {
         Adapter.addAttachments("Content", "file01.txt");
-        Adapter.addAttachments("resources/attachments/file02.txt");
+        Adapter.addAttachments(getFileFullPath("attachments/file02.txt"));
         List<String> paths = new ArrayList<>();
-        paths.add("resources/attachments/file03.txt");
-        paths.add("resources/attachments/file04.txt");
+        paths.add(getFileFullPath("attachments/file03.txt"));
+        paths.add(getFileFullPath("attachments/file04.txt"));
         Adapter.addAttachments(paths);
 
         Assertions.assertTrue(false);
@@ -69,10 +70,10 @@ public class MethodTests {
         Adapter.addLinks("https://test02.example", "Example02", "Example02 description", LinkType.ISSUE);
 
         Adapter.addAttachments("Content", "file01.txt");
-        Adapter.addAttachments("resources/attachments/file02.txt");
+        Adapter.addAttachments(getFileFullPath("attachments/file02.txt"));
         List<String> paths = new ArrayList<>();
-        paths.add("resources/attachments/file03.txt");
-        paths.add("resources/attachments/file04.txt");
+        paths.add(getFileFullPath("attachments/file03.txt"));
+        paths.add(getFileFullPath("attachments/file04.txt"));
         Adapter.addAttachments(paths);
 
         Adapter.addMessage("Message");
@@ -86,14 +87,19 @@ public class MethodTests {
         Adapter.addLinks("https://test02.example", "Example02", "Example02 description", LinkType.ISSUE);
 
         Adapter.addAttachments("Content", "file01.txt");
-        Adapter.addAttachments("resources/attachments/file02.txt");
+        Adapter.addAttachments(getFileFullPath("attachments/file02.txt"));
         List<String> paths = new ArrayList<>();
-        paths.add("resources/attachments/file03.txt");
-        paths.add("resources/attachments/file04.txt");
+        paths.add(getFileFullPath("attachments/file03.txt"));
+        paths.add(getFileFullPath("attachments/file04.txt"));
         Adapter.addAttachments(paths);
 
         Adapter.addMessage("Message");
 
         Assertions.assertTrue(false);
+    }
+
+    private String getFileFullPath(String fileName){
+        URL url = getClass().getClassLoader().getResource(fileName);
+        return url != null ? url.getFile() : null;
     }
 }
