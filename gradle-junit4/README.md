@@ -13,8 +13,8 @@ Example of tests with JUnit framework and adapter for Test IT of a Gradle projec
 
 * **src/test/java/examples/** – test files
     * **AnnotationTests.java** – simple test examples with [annotations testit-adapter-junit4](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-junit4#annotations)
-        * **MethodTests.java** – simple test examples with [methods testit-adapter-junit4](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-junit4#annotations)
-        * **StepsTests.java** – simple test examples with [steps testit-adapter-junit4](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-junit4#annotations)
+    * **MethodTests.java** – simple test examples with [methods testit-adapter-junit4](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-junit4#annotations)
+    * **StepsTests.java** – simple test examples with [steps testit-adapter-junit4](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-junit4#annotations)
 * **src/test/resources/** – resource files for tests
     * **attachments/** - attachment files for tests
     * **testit.properties** - configuration file where specified base options for tests
