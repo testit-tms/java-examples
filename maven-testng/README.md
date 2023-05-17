@@ -13,8 +13,8 @@ Example of tests with TestNG framework and adapter for Test IT of a Maven projec
 
 * **src/test/java/examples/** – test files
     * **AnnotationTests.java** – simple test examples with [annotations testit-adapter-testng](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-testng#annotations)
-        * **MethodTests.java** – simple test examples with [methods testit-adapter-testng](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-testng#annotations)
-        * **StepsTests.java** – simple test examples with [steps testit-adapter-testng](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-testng#annotations)
+    * **MethodTests.java** – simple test examples with [methods testit-adapter-testng](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-testng#annotations)
+    * **StepsTests.java** – simple test examples with [steps testit-adapter-testng](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-testng#annotations)
 * **src/test/resources/** – resource files for tests
     * **attachments/** - attachment files for tests
     * **testit.properties** - configuration file where specified base options for tests
