@@ -3,6 +3,8 @@ package examples;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import ru.testit.listener.BaseJunit4Runner;
 import ru.testit.models.LinkType;
 import ru.testit.services.Adapter;
 
@@ -10,6 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+@RunWith(BaseJunit4Runner.class)
 public class MethodTests {
     @Test
     public void addLinks_success() {
