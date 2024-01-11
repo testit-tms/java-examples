@@ -17,27 +17,27 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.0</version>
+            <version>5.8.2</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.0</version>
+            <version>5.8.2</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.7.0</version>
+            <version>5.8.2</version>
         </dependency>
         <dependency>
             <groupId>ru.testit</groupId>
             <artifactId>testit-java-commons</artifactId>
-            <version>1.2.2</version>
+            <version>1.5.1</version>
         </dependency>
         <dependency>
             <groupId>ru.testit</groupId>
             <artifactId>testit-adapter-junit5</artifactId>
-            <version>1.2.2</version>
+            <version>1.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -98,11 +98,6 @@
                 <configuration>
                     <argLine>-XX:-UseSplitVerifier</argLine>
                     <argLine>-javaagent:${user.home}/.m2/repository/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar</argLine>
-                    <properties>
-                        <configurationParameters>
-                            junit.jupiter.extensions.autodetection.enabled = true
-                        </configurationParameters>
-                    </properties>
                 </configuration>
             </plugin>
         </plugins>
