@@ -13,7 +13,7 @@ repositories {
 def junitVersion = "5.8.2"
 def jbehaveVersion = "4.8.3"
 def aspectjVersion = "1.9.7"
-def adapterVersion = "1.1.4"
+def adapterVersion = "1.5.1"
 
 dependencies {
     testImplementation "ru.testit:testit-adapter-jbehave:$adapterVersion"
