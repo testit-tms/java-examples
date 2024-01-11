@@ -33,7 +33,6 @@ compileTestJava {
 
 test {
     useJUnitPlatform()
-    systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
     doFirst {
         def weaver = configurations.aspectConfig.find { it.name.contains("aspectjweaver") }
         jvmArgs += "-javaagent:$weaver"
