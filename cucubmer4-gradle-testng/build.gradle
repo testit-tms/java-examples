@@ -13,8 +13,8 @@ repositories {
 def cucumberVersion = "4.8.0"
 
 dependencies {
-    testImplementation "ru.testit:testit-adapter-cucumber4:1.1.1"
-    testImplementation "ru.testit:testit-java-commons:1.1.1"
+    testImplementation "ru.testit:testit-adapter-cucumber4:1.5.1"
+    testImplementation "ru.testit:testit-java-commons:1.5.1"
     testImplementation 'org.testng:testng:7.5'
     testImplementation("io.cucumber:cucumber-core:$cucumberVersion")
     testImplementation("io.cucumber:cucumber-java:$cucumberVersion")
