@@ -23,8 +23,10 @@
 hs_err_pid*
 
 # Idea
-*/.idea
+**/.idea
 */.gradle
 */build
 */target
 */bin
+
+**/.vs

@@ -3,9 +3,12 @@ package examples;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import ru.testit.annotations.*;
+import ru.testit.listener.BaseJunit4Runner;
 import ru.testit.models.LinkType;
 
+@RunWith(BaseJunit4Runner.class)
 public class AnnotationTests {
 
     @Test
@@ -96,7 +99,7 @@ public class AnnotationTests {
         Assert.assertTrue(false);
     }
 
-    @WorkItemIds({"123", "321"})
+    @WorkItemIds({"26103", "26104"})
     @Test
     public void workItemIdsAnnotation_success() {
         Assert.assertTrue(true);
@@ -113,7 +116,7 @@ public class AnnotationTests {
     @Title("withAllAnnotations_success Title")
     @Description("withAllAnnotations_success")
     @Labels({"Label1", "Label2"})
-    @WorkItemIds({"123", "321"})
+    @WorkItemIds({"26103", "26104"})
     @Links(links = {
             @Link(url = "https://test01.example", title = "Example01", description = "Example01 description", type = LinkType.ISSUE),
             @Link(url = "https://test02.example", title = "Example02", description = "Example01 description", type = LinkType.ISSUE)}
@@ -128,7 +131,7 @@ public class AnnotationTests {
     @Title("withAllAnnotations_failed Title")
     @Description("withAllAnnotations_failed")
     @Labels({"Label1", "Label2"})
-    @WorkItemIds({"123", "321"})
+    @WorkItemIds({"26103", "321"})
     @Links(links = {
             @Link(url = "https://test01.example", title = "Example01", description = "Example01 description", type = LinkType.ISSUE),
             @Link(url = "https://test02.example", title = "Example02", description = "Example01 description", type = LinkType.ISSUE)}

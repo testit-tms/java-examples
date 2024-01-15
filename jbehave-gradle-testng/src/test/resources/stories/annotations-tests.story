@@ -68,7 +68,7 @@ Then return false
 
 Scenario: With workitemids annotation success
 Meta:
-@WorkItemIds=123,321
+@WorkItemIds=26655,26656
 Then return true
 
 Scenario: With workitemids annotation failed
@@ -85,7 +85,7 @@ Meta:
 @Labels=Label1,Label2
 @Links={"url":"https://test01.example","title":"Example01","description":"Example01_description","type":"Issue"}
 @Links={"url":"https://test02.example","title":"Example02","description":"Example02_description","type":"Issue"}
-@WorkItemIds=123,321
+@WorkItemIds=26655,26656
 Then return true
 
 Scenario: With all annotations failed
@@ -97,7 +97,7 @@ Meta:
 @Labels=Label1,Label2
 @Links={"url":"https://test01.example","title":"Example01","description":"Example01_description","type":"Issue"}
 @Links={"url":"https://test02.example","title":"Example02","description":"Example02_description","type":"Issue"}
-@WorkItemIds=123,321
+@WorkItemIds=26655,321
 Then return false
 
 

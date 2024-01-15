@@ -28,7 +28,7 @@ serenity {
     reports = ["single-page-html"]
 }
 
-def adapterVersion = "1.1.1"
+def adapterVersion = "1.5.1"
 def serenityVersion = "3.3.4"
 def slf4jVersion = "1.7.36"
 

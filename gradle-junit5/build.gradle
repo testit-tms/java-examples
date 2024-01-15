@@ -14,7 +14,7 @@ repositories {
     mavenLocal()
 }
 
-def adapter_version = "1.2.2"
+def adapter_version = "1.5.1"
 
 dependencies {
     testImplementation 'org.aspectj:aspectjrt:1.9.7'
@@ -33,7 +33,6 @@ compileTestJava {
 
 test {
     useJUnitPlatform()
-    systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
     doFirst {
         def weaver = configurations.aspectConfig.find { it.name.contains("aspectjweaver") }
         jvmArgs += "-javaagent:$weaver"

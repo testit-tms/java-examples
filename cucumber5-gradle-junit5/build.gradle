@@ -14,8 +14,8 @@ def cucumberVersion = "5.5.0"
 def cucumberGherkinVersion = "5.1.0"
 
 dependencies {
-    testImplementation "ru.testit:testit-adapter-cucumber5:1.2.3"
-    testImplementation "ru.testit:testit-java-commons:1.2.3"
+    testImplementation "ru.testit:testit-adapter-cucumber5:1.5.1"
+    testImplementation "ru.testit:testit-java-commons:1.5.1"
     testImplementation("io.cucumber:gherkin:$cucumberGherkinVersion")
     testImplementation("io.cucumber:cucumber-core:$cucumberVersion")
     testImplementation("io.cucumber:cucumber-java:$cucumberVersion")
