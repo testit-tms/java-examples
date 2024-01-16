@@ -1,3 +1,5 @@
+import java.nio.file.Paths
+
 plugins {
     id 'java'
 }
@@ -21,10 +23,29 @@ repositories {
     mavenLocal()
 }
 
+def adapterVersion = "1.5.1"
+
 dependencies {
+    def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")
+    def adapterJar = System.getProperty("ADAPTER_JAR", "")
+
+    if (javaCommonsJar == "") {
+        testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(javaCommonsJar)
+    }
+
+    if (adapterJar == "") {
+        testImplementation "ru.testit:testit-adapter-junit4:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(adapterJar)
+    }
+    
     testImplementation 'org.aspectj:aspectjrt:1.9.7'
-    testImplementation "ru.testit:testit-adapter-junit4:1.5.1"
-    testImplementation "ru.testit:testit-java-commons:1.5.1"
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.junit.platform:junit-platform-runner:1.6.3'
     aspectConfig "org.aspectj:aspectjweaver:1.9.7"

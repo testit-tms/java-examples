@@ -1,3 +1,5 @@
+import java.nio.file.Paths
+
 plugins {
     id 'java'
 }
@@ -12,10 +14,28 @@ repositories {
 
 def cucumberVersion = "4.8.0"
 def junit4Version = "4.12"
+def adapterVersion = "1.5.1"
 
 dependencies {
-    testImplementation "ru.testit:testit-adapter-cucumber4:1.5.1"
-    testImplementation "ru.testit:testit-java-commons:1.5.1"
+    def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")
+    def adapterJar = System.getProperty("ADAPTER_JAR", "")
+
+    if (javaCommonsJar == "") {
+        testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(javaCommonsJar)
+    }
+
+    if (adapterJar == "") {
+        testImplementation "ru.testit:testit-adapter-cucumber4:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(adapterJar)
+    }
+    
     testImplementation("io.cucumber:cucumber-core:$cucumberVersion")
     testImplementation("io.cucumber:cucumber-java:$cucumberVersion")
     testImplementation("io.cucumber:cucumber-junit:$cucumberVersion")

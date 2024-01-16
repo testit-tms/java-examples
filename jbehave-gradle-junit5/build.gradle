@@ -1,3 +1,5 @@
+import java.nio.file.Paths
+
 plugins {
     id 'java'
 }
@@ -16,8 +18,25 @@ def aspectjVersion = "1.9.7"
 def adapterVersion = "1.5.1"
 
 dependencies {
-    testImplementation "ru.testit:testit-adapter-jbehave:$adapterVersion"
-    testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")
+    def adapterJar = System.getProperty("ADAPTER_JAR", "")
+
+    if (javaCommonsJar == "") {
+        testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(javaCommonsJar)
+    }
+
+    if (adapterJar == "") {
+        testImplementation "ru.testit:testit-adapter-jbehave:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(adapterJar)
+    }
+    
     testImplementation "org.jbehave:jbehave-core:$jbehaveVersion"
     testImplementation "org.aspectj:aspectjrt:$aspectjVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
