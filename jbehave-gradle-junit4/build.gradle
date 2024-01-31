@@ -20,6 +20,8 @@ def adapterVersion = "1.5.1"
 dependencies {
     def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")
     def adapterJar = System.getProperty("ADAPTER_JAR", "")
+    def adapterJBehave = System.getProperty("ADAPTER_JBEHAVE", "")
+
 
     if (javaCommonsJar == "") {
         testImplementation "ru.testit:testit-java-commons:$adapterVersion"
@@ -36,7 +38,15 @@ dependencies {
     {
         testImplementation files(adapterJar)
     }
-    
+
+    if (adapterJBehave == "") {
+        testImplementation "ru.testit:testit-adapter-jbehave:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(adapterJBehave)
+    }
+
     testImplementation "org.jbehave:jbehave-core:$jbehaveVersion"
     testImplementation "org.aspectj:aspectjrt:$aspectjVersion"
     testImplementation "junit:junit:$junitVersion"
