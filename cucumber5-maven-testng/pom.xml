@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <adapter.version>1.5.1</adapter.version>
     </properties>
     <dependencies>
         <dependency>
@@ -21,12 +22,12 @@
         <dependency>
             <groupId>ru.testit</groupId>
             <artifactId>testit-java-commons</artifactId>
-            <version>2.1.0</version>
+            <version>${adapter.version}</version>
         </dependency>
         <dependency>
             <groupId>ru.testit</groupId>
             <artifactId>testit-adapter-cucumber5</artifactId>
-            <version>2.1.0</version>
+            <version>${adapter.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>

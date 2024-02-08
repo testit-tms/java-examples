@@ -1,10 +1,13 @@
 package examples;
 
 import org.junit.*;
+import org.junit.runner.RunWith;
 import ru.testit.annotations.Description;
 import ru.testit.annotations.Step;
 import ru.testit.annotations.Title;
+import ru.testit.listener.BaseJunit4Runner;
 
+@RunWith(BaseJunit4Runner.class)
 public class StepsTests {
     @BeforeClass
     public static void testSetup() {

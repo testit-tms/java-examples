@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 @Test
 @CucumberOptions(
         features = "src/test/resources/features",
+        glue = "examples",
         plugin = {
                 "ru.testit.listener.BaseCucumber6Listener",
                 "progress",

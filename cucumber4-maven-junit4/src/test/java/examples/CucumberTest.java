@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
+        glue = "examples",
         plugin = {
                 "ru.testit.listener.BaseCucumber4Listener",
                 "progress",

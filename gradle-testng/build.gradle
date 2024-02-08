@@ -1,3 +1,5 @@
+import java.nio.file.Paths
+
 plugins {
     id 'java'
 }
@@ -12,7 +14,7 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 compileJava.options.encoding = 'utf-8'
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'utf-8'
     // Allows the adapter to accept real parameter names
     options.compilerArgs.add("-parameters")
@@ -23,10 +25,29 @@ repositories {
     mavenLocal()
 }
 
+def adapterVersion = "1.5.1"
+
 dependencies {
+    def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")
+    def adapterJar = System.getProperty("ADAPTER_JAR", "")
+
+    if (javaCommonsJar == "") {
+        testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(javaCommonsJar)
+    }
+
+    if (adapterJar == "") {
+        testImplementation "ru.testit:testit-adapter-testng:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(adapterJar)
+    }
+    
     testImplementation 'org.aspectj:aspectjrt:1.9.7'
-    testImplementation "ru.testit:testit-adapter-testng:1.2.3"
-    testImplementation "ru.testit:testit-java-commons:1.2.3"
     testImplementation 'org.testng:testng:7.5'
     aspectConfig "org.aspectj:aspectjweaver:1.9.7"
 }

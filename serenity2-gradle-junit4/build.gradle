@@ -1,3 +1,5 @@
+import java.nio.file.Paths
+
 defaultTasks 'clean', 'test', 'aggregate'
 
 repositories {
@@ -28,13 +30,30 @@ serenity {
     reports = ["single-page-html"]
 }
 
-def adapterVersion = "1.1.1"
+def adapterVersion = "1.5.1"
 def serenityVersion = "2.6.0"
 def slf4jVersion = "1.7.36"
 
 dependencies {
-    testImplementation "ru.testit:testit-adapter-cucumber6:${adapterVersion}"
-    testImplementation "ru.testit:testit-java-commons:${adapterVersion}"
+    def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")
+    def adapterJar = System.getProperty("ADAPTER_JAR", "")
+
+    if (javaCommonsJar == "") {
+        testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    }
+    else
+    {
+        testImplementation files(javaCommonsJar)
+    }
+
+    if (adapterJar == "") {
+        testImplementation "ru.testit:testit-adapter-cucumber6:${adapterVersion}"
+    }
+    else
+    {
+        testImplementation files(adapterJar)
+    }
+    
     testImplementation "org.slf4j:slf4j-api:${slf4jVersion}"
     testImplementation "org.slf4j:slf4j-simple:${slf4jVersion}"
     testImplementation "net.serenity-bdd:serenity-cucumber6:${serenityVersion}"

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import ru.testit.selenide.SelenideListener;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.innerText;
 
 @ExtendWith(TextReportExtension.class)
 public class ExampleTests {
@@ -29,17 +29,17 @@ public class ExampleTests {
     public void TestFailed() {
         steps.openPage();
 
-        SelenideElement searchField = steps.getElementByXpath("//h1[contains(@class,\"title\")]");
+        SelenideElement searchField = steps.getElementByXpath("//h1[contains(@class,'title')]");
 
-        searchField.shouldHave(text("Система для управления тестированием"));
+        searchField.shouldHave(innerText("Система для управления тестированием"));
     }
 
     @Test
     public void TestSuccess() {
         steps.openPage();
 
-        SelenideElement searchField = steps.getElementByXpath("//h1[contains(@class,\"title\")]");
+        SelenideElement searchField = steps.getElementByXpath("//h1[contains(@class,'title')]");
 
-        searchField.shouldHave(text("Система управления тестированием"));
+        searchField.shouldHave(innerText("Система управления тестированием"));
     }
 }
