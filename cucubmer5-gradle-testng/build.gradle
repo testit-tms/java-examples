@@ -14,7 +14,7 @@ repositories {
 
 def cucumberVersion = "5.1.2"
 def cucumberGherkinVersion = "5.1.0"
-def adapterVersion = "1.5.1"
+def adapterVersion = "1.6.0"
 
 dependencies {
     def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")

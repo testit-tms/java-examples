@@ -20,7 +20,7 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'utf-8'
 }
 
-def adapterVersion = "1.5.1"
+def adapterVersion = "1.6.0"
 
 dependencies {
     def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")

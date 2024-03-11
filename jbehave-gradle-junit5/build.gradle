@@ -15,7 +15,7 @@ repositories {
 def junitVersion = "5.8.2"
 def jbehaveVersion = "4.8.3"
 def aspectjVersion = "1.9.7"
-def adapterVersion = "1.5.1"
+def adapterVersion = "1.6.0"
 
 dependencies {
     def javaCommonsJar = System.getProperty("JAVA_COMMONS_JAR", "")
