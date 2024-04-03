@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id "java"
 }
 
 configurations {
@@ -8,12 +8,12 @@ configurations {
 
 sourceCompatibility = 1.8
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group "org.example"
+version "1.0-SNAPSHOT"
 
-compileJava.options.encoding = 'utf-8'
+compileJava.options.encoding = "utf-8"
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'utf-8'
+    options.encoding = "utf-8"
 }
 
 repositories {
@@ -26,9 +26,9 @@ def adapterVersion = "[0,)"
 dependencies {
     testImplementation "ru.testit:testit-java-commons:$adapterVersion"
     testImplementation "ru.testit:testit-adapter-junit4:$adapterVersion"
-    testImplementation 'org.aspectj:aspectjrt:1.9.7'
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.junit.platform:junit-platform-runner:1.6.3'
+    testImplementation "org.aspectj:aspectjrt:1.9.7"
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.junit.platform:junit-platform-runner:1.6.3"
     aspectConfig "org.aspectj:aspectjweaver:1.9.7"
 }
 
@@ -45,14 +45,14 @@ test {
         showStandardStreams = true
     }
 
-    environment 'TMS_URL', System.getProperty('tmsUrl')
-    environment 'TMS_PRIVATE_TOKEN', System.getProperty('tmsPrivateToken')
-    environment 'TMS_PROJECT_ID', System.getProperty('tmsProjectId')
-    environment 'TMS_CONFIGURATION_ID', System.getProperty('tmsConfigurationId')
-    environment 'TMS_TEST_RUN_ID', System.getProperty('tmsTestRunId')
-    environment 'TMS_TEST_RUN_NAME', System.getProperty('tmsTestRunName')
-    environment 'TMS_ADAPTER_MODE', System.getProperty('tmsAdapterMode')
-    environment 'TMS_CERT_VALIDATION', System.getProperty('tmsCertValidation')
-    environment 'TMS_TEST_IT', System.getProperty('testIt')
-    environment 'TMS_AUTOMATIC_CREATION_TEST_CASES', System.getProperty('tmsAutomaticCreationTestCases')
+    environment "TMS_URL", System.getProperty("tmsUrl")
+    environment "TMS_PRIVATE_TOKEN", System.getProperty("tmsPrivateToken")
+    environment "TMS_PROJECT_ID", System.getProperty("tmsProjectId")
+    environment "TMS_CONFIGURATION_ID", System.getProperty("tmsConfigurationId")
+    environment "TMS_TEST_RUN_ID", System.getProperty("tmsTestRunId")
+    environment "TMS_TEST_RUN_NAME", System.getProperty("tmsTestRunName")
+    environment "TMS_ADAPTER_MODE", System.getProperty("tmsAdapterMode")
+    environment "TMS_CERT_VALIDATION", System.getProperty("tmsCertValidation")
+    environment "TMS_TEST_IT", System.getProperty("testIt")
+    environment "TMS_AUTOMATIC_CREATION_TEST_CASES", System.getProperty("tmsAutomaticCreationTestCases")
 }
