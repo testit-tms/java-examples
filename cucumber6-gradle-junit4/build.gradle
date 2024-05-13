@@ -10,6 +10,11 @@ repositories {
     mavenCentral()
 }
 
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = "utf-8"
+}
+
 def cucumberVersion = "6.10.2"
 def cucumberGherkinVersion = "18.0.0"
 def junit4Version = "4.12"

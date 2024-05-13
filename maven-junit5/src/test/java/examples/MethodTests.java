@@ -23,7 +23,7 @@ public class MethodTests {
         Adapter.addLinks("https://test01.example", "Example01", "Example01 description", LinkType.ISSUE);
         Adapter.addLinks("https://test02.example", "Example02", "Example02 description", LinkType.ISSUE);
 
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Test
@@ -47,7 +47,7 @@ public class MethodTests {
         paths.add(getFileFullPath("attachments/file04.txt"));
         Adapter.addAttachments(paths);
 
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Test
@@ -61,7 +61,7 @@ public class MethodTests {
     public void addMessage_failed() {
         Adapter.addMessage("Message");
 
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Test
@@ -95,7 +95,7 @@ public class MethodTests {
 
         Adapter.addMessage("Message");
 
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     private String getFileFullPath(String fileName){

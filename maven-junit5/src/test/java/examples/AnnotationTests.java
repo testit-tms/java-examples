@@ -19,7 +19,7 @@ public class AnnotationTests {
 
     @Test
     public void withoutAnnotations_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @ExternalId("externalIdAnnotation_success")
@@ -31,7 +31,7 @@ public class AnnotationTests {
     @ExternalId("externalIdAnnotation_failed")
     @Test
     public void externalIdAnnotation_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @DisplayName("externalIdAnnotation_success DisplayName")
@@ -43,7 +43,7 @@ public class AnnotationTests {
     @DisplayName("displayNameAnnotation_failed DisplayName")
     @Test
     public void displayNameAnnotation_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Title("titleAnnotation_success Title")
@@ -55,7 +55,7 @@ public class AnnotationTests {
     @Title("titleAnnotation_failed Title")
     @Test
     public void titleAnnotation_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Description("descriptionAnnotation_success")
@@ -67,7 +67,7 @@ public class AnnotationTests {
     @Description("descriptionAnnotation_failed")
     @Test
     public void descriptionAnnotation_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Labels({"Label1", "Label2"})
@@ -79,7 +79,7 @@ public class AnnotationTests {
     @Labels({"Label1", "Label2"})
     @Test
     public void labelsAnnotation_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Links(links = {
@@ -97,7 +97,7 @@ public class AnnotationTests {
     )
     @Test
     public void linksAnnotation_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @WorkItemIds({"26449", "26450"})
@@ -109,7 +109,7 @@ public class AnnotationTests {
     @WorkItemIds({"123", "321"})
     @Test
     public void workItemIdsAnnotation_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @ExternalId("withAllAnnotations_success")
@@ -139,7 +139,7 @@ public class AnnotationTests {
     )
     @Test
     public void withAllAnnotations_failed() {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     static Stream<Arguments> arguments() {
@@ -165,6 +165,6 @@ public class AnnotationTests {
     @ParameterizedTest
     @MethodSource("arguments")
     public void parametrizedTest_failed(int number, String str) {
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 }
