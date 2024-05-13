@@ -10,6 +10,11 @@ repositories {
     mavenCentral()
 }
 
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = "utf-8"
+}
+
 def junitVersion = "5.8.2"
 def jbehaveVersion = "4.8.3"
 def aspectjVersion = "1.9.7"

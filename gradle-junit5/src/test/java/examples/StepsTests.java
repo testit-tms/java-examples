@@ -35,7 +35,7 @@ public class StepsTests {
         Step01();
         Step02(2);
 
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
 
@@ -62,7 +62,7 @@ public class StepsTests {
         Step03();
         Step04(3);
 
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Step
@@ -88,7 +88,7 @@ public class StepsTests {
         Step05();
         Step06(3);
 
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @Step
@@ -116,7 +116,7 @@ public class StepsTests {
         Step07();
         Step08(3);
 
-        Assertions.assertTrue(false);
+        Assertions.fail();
     }
 
     @AfterEach

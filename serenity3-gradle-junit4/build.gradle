@@ -21,8 +21,10 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'net.serenity-bdd.aggregator'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+    options.encoding = "utf-8"
+}
 
 serenity {
     reports = ["single-page-html"]
