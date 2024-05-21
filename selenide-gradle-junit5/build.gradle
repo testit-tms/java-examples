@@ -42,8 +42,8 @@ test {
     }
     testLogging {
         events = [ "failed", "skipped", "passed" ]
-        showCauses = false
-        showStackTraces = false
+        showCauses = true
+        showStackTraces = true
         showStandardStreams = true
     }
     systemProperties(System.getProperties())
