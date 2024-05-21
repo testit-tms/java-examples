@@ -28,9 +28,9 @@ def adapterVersion = "[0,)"
 dependencies {
     testImplementation "ru.testit:testit-java-commons:$adapterVersion"
     testImplementation "ru.testit:testit-adapter-testng:$adapterVersion"
-    testImplementation "org.aspectj:aspectjrt:1.9.22"
+    testImplementation "org.aspectj:aspectjrt:1.9.7"
     testImplementation "org.testng:testng:7.5"
-    aspectConfig "org.aspectj:aspectjweaver:1.9.22"
+    aspectConfig "org.aspectj:aspectjweaver:1.9.7"
 }
 
 test {

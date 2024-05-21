@@ -17,7 +17,7 @@ tasks.withType(JavaCompile).configureEach {
 
 def junitVersion = "4.12"
 def jbehaveVersion = "4.8.3"
-def aspectjVersion = "1.9.22"
+def aspectjVersion = "1.9.7"
 def adapterVersion = "[0,)"
 
 dependencies {
