@@ -55,6 +55,7 @@ test {
         showStandardStreams = true
     }
     systemProperties(System.getProperties())
+    environment(System.getenv())
 }
 
 gradle.startParameter.continueOnFailure = true
