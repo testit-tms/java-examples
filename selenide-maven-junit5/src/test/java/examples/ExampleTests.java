@@ -1,3 +1,5 @@
+package examples;
+
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.junit5.TextReportExtension;
 import com.codeborne.selenide.logevents.SelenideLogger;
