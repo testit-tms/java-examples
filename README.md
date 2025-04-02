@@ -19,6 +19,7 @@ This repository contains samples for Java testing frameworks and Test IT adapter
    - [Cucumber7-Gradle-Junit5](https://github.com/testit-tms/java-examples/tree/main/cucumber7-gradle-junit5)
    - [Cucumber7-Maven-Junit5](https://github.com/testit-tms/java-examples/tree/main/cucumber7-maven-junit5) 
    - [Cucumber7-Gradle-TestNG](https://github.com/testit-tms/java-examples/tree/main/cucubmer7-gradle-testng)
+   - [Cucumber7-Maven-TestNG](https://github.com/testit-tms/java-examples/tree/main/cucumber7-maven-testng)
 
 * Cucumber6
    - [Cucumber6-Gradle-Junit4](https://github.com/testit-tms/java-examples/tree/main/cucumber6-gradle-junit4)
