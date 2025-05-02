@@ -33,7 +33,7 @@ public class ExampleTests {
     @Title("withAllAnnotations_failed Title")
     @Description("withAllAnnotations_failed")
     @Labels({"Label1", "Label2"})
-    @WorkItemIds({"26449", "321"})
+    @WorkItemIds({"1515", "1516"})
     @Links(links = {
             @Link(url = "https://test01.example", title = "Example01", description = "Example01 description", type = LinkType.ISSUE),
             @Link(url = "https://test02.example", title = "Example02", description = "Example01 description", type = LinkType.ISSUE)}
@@ -52,7 +52,7 @@ public class ExampleTests {
     @Title("withAllAnnotations_success Title")
     @Description("withAllAnnotations_success")
     @Labels({"Label1", "Label2"})
-    @WorkItemIds({"26449", "26450"})
+    @WorkItemIds({"1517", "1518"})
     @Links(links = {
             @Link(url = "https://test01.example", title = "Example01", description = "Example01 description", type = LinkType.ISSUE),
             @Link(url = "https://test02.example", title = "Example02", description = "Example01 description", type = LinkType.ISSUE)}
