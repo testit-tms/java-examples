@@ -1,3 +1,5 @@
+package ru.testit.samples;
+
 import com.codeborne.selenide.SelenideElement;
 import ru.testit.annotations.Step;
 import ru.testit.annotations.Title;
