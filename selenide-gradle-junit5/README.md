@@ -12,8 +12,8 @@ Example of tests with Selenide and Junit5 frameworks and adapter for Test IT of 
 ## Project structure
 
 * **src/test/java/** – test files
-  * **ExampleTests.java** – simple test examples with [annotations testit-adapter-junit5](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-selenide#annotations)
-  * **Steps.java** – simple examples of [steps](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-selenide#annotations)
+  * **ru.testit.samples.ExampleTests.java** – simple test examples with [annotations testit-adapter-junit5](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-selenide#annotations)
+  * **ru.testit.samples.Steps.java** – simple examples of [steps](https://github.com/testit-tms/adapters-java/tree/main/testit-adapter-selenide#annotations)
 * **src/test/resources/** – resource files for tests
     * **testit.properties** - configuration file where specified base options for tests
 * **build.gradle** - [build file](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html) of a Gradle project
