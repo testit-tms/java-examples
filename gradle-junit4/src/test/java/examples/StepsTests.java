@@ -15,6 +15,7 @@ public class StepsTests {
 
     @Before
     public void testMethod() {
+        Assert.assertTrue(false);
     }
 
     @Step
@@ -124,9 +125,11 @@ public class StepsTests {
 
     @After
     public void teardownMethod() {
+        Assert.assertTrue(false);
     }
 
     @AfterClass
     public static void teardownClass() {
+        Assert.assertTrue(false);
     }
 }
