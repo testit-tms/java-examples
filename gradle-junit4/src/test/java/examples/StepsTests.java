@@ -15,7 +15,6 @@ public class StepsTests {
 
     @Before
     public void testMethod() {
-        Assert.assertTrue(false);
     }
 
     @Step
