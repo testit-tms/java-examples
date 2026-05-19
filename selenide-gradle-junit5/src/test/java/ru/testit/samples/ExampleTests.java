@@ -45,7 +45,7 @@ public class ExampleTests {
 
         SelenideElement searchField = steps.getElementByXpath("//h1[contains(@class,'title')]");
 
-        searchField.shouldHave(innerText("Система для управления тестированием"));
+        searchField.shouldHave(innerText("Самая популярная в РФ* платформа управления тестированием1"));
     }
 
     @Test
@@ -64,6 +64,6 @@ public class ExampleTests {
 
         SelenideElement searchField = steps.getElementByXpath("//h1[contains(@class,'title')]");
 
-        searchField.shouldHave(innerText("Система управления тестированием"));
+        searchField.shouldHave(innerText("Самая популярная в РФ* платформа управления тестированием"));
     }
 }
