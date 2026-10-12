@@ -1,0 +1,53 @@
+plugins {
+    id "java"
+}
+
+configurations {
+    aspectConfig
+}
+
+group "org.example"
+version "1.0-SNAPSHOT"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
+    options.encoding = "utf-8"
+}
+
+def adapterVersion = "[0,)"
+
+dependencies {
+    testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    testImplementation "ru.testit:testit-adapter-junit6:$adapterVersion"
+    testImplementation "org.aspectj:aspectjrt:1.9.22"
+    testImplementation "org.junit.platform:junit-platform-launcher:6.0.0"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:6.0.0"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:6.0.0"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:6.0.0"
+    aspectConfig "org.aspectj:aspectjweaver:1.9.22"
+}
+
+compileTestJava {
+    options.getCompilerArgs().add("-parameters")
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events = [ "failed", "skipped", "passed" ]
+        showCauses = true
+        showStackTraces = true
+        showStandardStreams = true
+    }
+    doFirst {
+        def weaver = configurations.aspectConfig.find { it.name.contains("aspectjweaver") }
+        jvmArgs += "-javaagent:$weaver"
+    }
+    systemProperties(System.getProperties())
+    environment(System.getenv())
+}
