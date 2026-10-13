@@ -9,6 +9,10 @@ This repository contains samples for Java testing frameworks and Test IT adapter
    - [Gradle-Junit5](https://github.com/testit-tms/java-examples/tree/main/gradle-junit5)
    - [Maven-Junit5](https://github.com/testit-tms/java-examples/tree/main/maven-junit5)
 
+* Junit6
+   - [Gradle-Junit6](https://github.com/testit-tms/java-examples/tree/main/gradle-junit6)
+   - [Maven-Junit6](https://github.com/testit-tms/java-examples/tree/main/maven-junit6)
+
 * Junit4
    - [Gradle-Junit4](https://github.com/testit-tms/java-examples/tree/main/gradle-junit4)
    - [Maven-Junit4](https://github.com/testit-tms/java-examples/tree/main/maven-junit4)   
