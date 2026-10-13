@@ -100,7 +100,7 @@ public class AnnotationTests {
         Assertions.fail();
     }
 
-    @WorkItemIds({"26018", "26019"})
+    @WorkItemIds({"10440", "10441"})
     @Test
     public void workItemIdsAnnotation_success() {
         Assertions.assertTrue(true);
@@ -117,7 +117,7 @@ public class AnnotationTests {
     @Title("withAllAnnotations_success Title")
     @Description("withAllAnnotations_success")
     @Labels({"Label1", "Label2"})
-    @WorkItemIds({"26018", "26019"})
+    @WorkItemIds({"10442", "10443"})
     @Links(links = {
             @Link(url = "https://test01.example", title = "Example01", description = "Example01 description", type = LinkType.ISSUE),
             @Link(url = "https://test02.example", title = "Example02", description = "Example01 description", type = LinkType.ISSUE)}
@@ -132,7 +132,7 @@ public class AnnotationTests {
     @Title("withAllAnnotations_failed Title")
     @Description("withAllAnnotations_failed")
     @Labels({"Label1", "Label2"})
-    @WorkItemIds({"26018", "321"})
+    @WorkItemIds({"10442", "321"})
     @Links(links = {
             @Link(url = "https://test01.example", title = "Example01", description = "Example01 description", type = LinkType.ISSUE),
             @Link(url = "https://test02.example", title = "Example02", description = "Example01 description", type = LinkType.ISSUE)}
