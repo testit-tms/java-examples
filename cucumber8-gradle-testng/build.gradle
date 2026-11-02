@@ -1,0 +1,47 @@
+plugins {
+    id "java"
+}
+
+group "org.example"
+version "1.0-SNAPSHOT"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
+    options.encoding = "utf-8"
+}
+
+def cucumberVersion = "8.0.4"
+def cucumberGherkinVersion = "42.0.1"
+def testngVersion = "7.9.0"
+def adapterVersion = "[0,)"
+
+configurations.all {
+    resolutionStrategy.force "org.testng:testng:$testngVersion"
+}
+
+dependencies {
+    testImplementation "ru.testit:testit-java-commons:$adapterVersion"
+    testImplementation "ru.testit:testit-adapter-cucumber8:$adapterVersion"
+    testImplementation "org.testng:testng:$testngVersion"
+    testImplementation("io.cucumber:gherkin:$cucumberGherkinVersion")
+    testImplementation("io.cucumber:cucumber-core:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-java:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-testng:$cucumberVersion")
+}
+
+test {
+    useTestNG()
+    testLogging {
+        events = [ "failed", "skipped", "passed" ]
+        showCauses = true
+        showStackTraces = true
+        showStandardStreams = true
+    }
+    systemProperties(System.getProperties())
+    environment(System.getenv())
+}
