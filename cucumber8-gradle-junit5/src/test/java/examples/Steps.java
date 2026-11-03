@@ -2,7 +2,7 @@ package examples;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Assertions;
+import org.junit.Assert;
 import ru.testit.annotations.Description;
 import ru.testit.annotations.Title;
 import ru.testit.models.LinkType;
@@ -16,17 +16,17 @@ public class Steps {
 
     @Then("return true")
     public void returnTrue() {
-        Assertions.assertTrue(true);
+        Assert.assertTrue(true);
     }
 
     @Then("return false")
     public void returnFalse() {
-        Assertions.assertTrue(false);
+        Assert.assertTrue(false);
     }
 
     @When("get parameters {int} {word}")
     public void getParameters(int number, String value) {
-        Assertions.assertTrue(true);
+        Assert.assertTrue(true);
     }
 
     @When("step01")
