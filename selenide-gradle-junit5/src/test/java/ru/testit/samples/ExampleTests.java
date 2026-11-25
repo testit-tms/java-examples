@@ -45,7 +45,8 @@ public class ExampleTests {
 
         SelenideElement searchField = steps.getElementByXpath("//h1[contains(@class,'title')]");
 
-        searchField.shouldHave(innerText("Самая популярная в РФ* платформа управления тестированием1"));
+        // Intentional fail: site headline + trailing "1". Keep in sync with www.testit.software h1.
+        searchField.shouldHave(innerText("Самая удобная в РФ* платформа управления тестированием1"));
     }
 
     @Test
@@ -64,6 +65,6 @@ public class ExampleTests {
 
         SelenideElement searchField = steps.getElementByXpath("//h1[contains(@class,'title')]");
 
-        searchField.shouldHave(innerText("Самая популярная в РФ* платформа управления тестированием"));
+        searchField.shouldHave(innerText("Самая удобная в РФ* платформа управления тестированием"));
     }
 }
