@@ -1,4 +1,4 @@
-﻿Feature: Rule
+Feature: Rule
   Tests that use Rule
 
   @DisplayName=sum:{left}+{right}={result}
